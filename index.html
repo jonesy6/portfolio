@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dustin Jones, Applied AI Engineer</title>
+<meta name="description" content="Dustin Jones builds production AI agents and tools, backed by 20 years of Linux and infrastructure engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F4F1; --ink:#1B2B27; --pine:#2E6A58; --muted:#56655F;
+  --line:#C6D1CB; --card:#FFFFFF; --amber:#B97A12; --amber-soft:#F7E8C9;
+  --model:#2E6A58; --model-ink:#FFFFFF;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#131B19; --ink:#E3EAE6; --pine:#7EC3A9; --muted:#9DB0A8;
+    --line:#34443F; --card:#1B2522; --amber:#E2A84A; --amber-soft:#3A2E17;
+    --model:#2E6A58; --model-ink:#FFFFFF;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,serif;font-size:1.0625rem;line-height:1.62}
+a{color:var(--pine);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:2px}
+.wrap{max-width:72rem;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+
+/* hero */
+header.hero{padding:4.5rem 0 2.5rem}
+.who{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:500;color:var(--muted);margin:0 0 1.2rem;font-size:1.05rem}
+.hero h1{font-size:clamp(2.4rem,6.5vw,5.4rem);font-weight:700;letter-spacing:-0.03em;max-width:16ch}
+.hero p.lede{font-size:1.25rem;max-width:42rem;margin:1.6rem 0 0}
+.scroll:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.contact{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:500}
+
+/* the one memorable device: amber marks the human or guardrail */
+.key{margin:2.6rem 0 0;padding:1rem 1.1rem;border-left:4px solid var(--amber);background:var(--amber-soft);border-radius:0 8px 8px 0;max-width:38rem}
+.key p{margin:0}
+
+main section{padding:4rem 0 0}
+main section + section{border-top:1px solid var(--line);margin-top:3.2rem}
+h2{font-size:clamp(1.55rem,3.6vw,2.05rem);font-weight:700;letter-spacing:-0.015em}
+.sum{font-size:1.15rem;margin:.7rem 0 0;color:var(--ink)}
+figure{margin:2rem 0 1.8rem;padding:clamp(1rem,2.5vw,2rem);background:var(--card);border:1px solid var(--line);border-radius:10px}
+figure svg{display:block;width:100%;height:auto}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:.8rem}
+h3{font-size:1.02rem;font-weight:700;margin:1.4rem 0 .25rem}
+section p{margin:.3rem 0 0}
+main section > h2, main section > h3, main section > p, main section > ul{max-width:44rem}
+.stack{margin-top:1.3rem;font-size:.95rem;color:var(--muted)}
+.stack strong{color:var(--ink);font-weight:600}
+.results{margin:.4rem 0 0;padding-left:1.2rem}
+.results li{margin:.25rem 0}
+
+/* svg styling */
+.n rect,.n path,.n ellipse{fill:var(--card);stroke:var(--ink);stroke-width:1.4}
+.n.ext rect{fill:var(--paper);stroke-dasharray:4 3}
+.n.model rect{fill:var(--model);stroke:var(--model)}
+.n.model text{fill:var(--model-ink)}
+.n.human rect{fill:var(--amber-soft);stroke:var(--amber);stroke-width:2.4}
+.n.store path,.n.store ellipse{fill:var(--paper)}
+.n text{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:13px;font-weight:500;fill:var(--ink);text-anchor:middle}
+.e{fill:none;stroke:var(--muted);stroke-width:1.5}
+.e.dash{stroke-dasharray:5 4}
+.ahp{fill:var(--muted)}
+.el,.cap{font-family:"Source Serif 4",Georgia,serif;font-size:12px;font-style:italic;fill:var(--muted);text-anchor:middle}
+.cap{text-anchor:start}
+
+ul.habits{padding-left:1.2rem;margin:.6rem 0 0}
+ul.habits li{margin:.45rem 0}
+
+footer{margin:4rem 0 0;padding:2rem 0 3rem;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+footer p{margin:.3rem 0}
+
+@media (max-width:560px){
+  header.hero{padding-top:3rem}
+  figure{padding:.7rem;margin-left:-.5rem;margin-right:-.5rem}
+  figure .scroll{overflow-x:auto}
+  figure svg{min-width:640px}
+  figure .scroll::after{content:"Scroll sideways to see the full diagram";display:block;font-size:.8rem;color:var(--muted);margin-top:.4rem;position:sticky;left:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="who">Dustin Jones, Applied AI Engineer</p>
+  <h1>AI tools that hold up in production.</h1>
+  <p class="lede">I build AI agents and workflow tools for the people I work with, and I run them like infrastructure: versioned, monitored, secured and reviewed. Before AI, I spent 20 years keeping Linux systems running, from university servers to a hyperscale datacenter fleet to a fintech SaaS platform.</p>
+  <div class="contact">
+    <a href="mailto:jonesy6@gmail.com">jonesy6@gmail.com</a>
+    <a href="https://www.linkedin.com/in/dustincolejones/">LinkedIn</a>
+    <a href="https://github.com/jonesy6">GitHub</a>
+  </div>
+  <div class="key">
+    <p>In every diagram below, <strong>amber marks where a person or a guardrail stands between the AI and the real world.</strong> Deciding where those go is most of the job.</p>
+  </div>
+</header>
+
+<main>
+
+<section id="questionnaires">
+  <h2>A day of compliance work, done in 30 minutes</h2>
+  <p class="sum">An AI pipeline that drafts answers to client security questionnaires from a curated evidence library, with a person approving every answer.</p>
+  <figure>
+    <div class="scroll" tabindex="0"><svg viewBox="0 0 760 220" role="img" aria-label="Questionnaire flow: parse and redact, search evidence, draft with sources, human review, export"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahp"/></marker></defs><g class="n ext"><rect x="0.0" y="40" width="112" height="64" rx="6"/><text x="56.0" y="68.5">Client</text><text x="56.0" y="83.5">questionnaire</text></g><g class="n"><rect x="129.6" y="40" width="112" height="64" rx="6"/><text x="185.6" y="68.5">Parse and</text><text x="185.6" y="83.5">redact</text></g><path class="e" d="M112.0,72.0 L127.6,72.0" marker-end="url(#ah)"/><g class="n"><rect x="259.2" y="40" width="112" height="64" rx="6"/><text x="315.2" y="68.5">Search evidence</text><text x="315.2" y="83.5">library (MCP)</text></g><path class="e" d="M241.6,72.0 L257.2,72.0" marker-end="url(#ah)"/><g class="n model"><rect x="388.79999999999995" y="40" width="112" height="64" rx="6"/><text x="444.79999999999995" y="68.5">Draft answers</text><text x="444.79999999999995" y="83.5">with sources</text></g><path class="e" d="M371.2,72.0 L386.79999999999995,72.0" marker-end="url(#ah)"/><g class="n human"><rect x="518.4" y="40" width="112" height="64" rx="14"/><text x="574.4" y="68.5">Person reviews</text><text x="574.4" y="83.5">and approves</text></g><path class="e" d="M500.79999999999995,72.0 L516.4,72.0" marker-end="url(#ah)"/><g class="n"><rect x="648.0" y="40" width="112" height="64" rx="6"/><text x="704.0" y="68.5">Export to</text><text x="704.0" y="83.5">client format</text></g><path class="e" d="M630.4,72.0 L646.0,72.0" marker-end="url(#ah)"/><g class="n store"><path d="M259.2,158 a56.0,8 0 0,0 112,0 v42 a56.0,8 0 0,1 -112,0 z"/><ellipse cx="315.2" cy="158" rx="56.0" ry="8"/><text x="315.2" y="179.5">Evidence</text><text x="315.2" y="194.5">library</text></g><path class="e" d="M315.2,150 L315.2,107" marker-end="url(#ah)"/><text class="cap" x="383.2" y="184">15 owned sections, reviewed quarterly</text><text class="cap" x="185.6" y="26" text-anchor="middle">sensitive data removed before any model call</text></svg></div>
+    <figcaption>The model only drafts. Nothing leaves the building without a reviewer's approval, and sensitive data is stripped before any model sees it.</figcaption>
+  </figure>
+  <h3>The problem</h3>
+  <p>Institutional clients send long due-diligence questionnaires, each in its own format. Answering one took about a full day of searching old answers and policy documents, and the evidence lived in an unstructured 67 MB pile of files.</p>
+  <h3>What I did</h3>
+  <p>I fixed the data before automating anything. I reorganized the evidence into 15 sections, each with an owner and a quarterly review. Then I built a portal that parses questionnaires from 6+ client formats, redacts sensitive data, searches the evidence through an MCP server, and drafts answers with their sources attached. People review, edit and approve each one.</p>
+  <h3>Results</h3>
+  <ul class="results">
+    <li>Turnaround dropped from about a day to 30–45 minutes.</li>
+    <li>The people who did this by hand say it made the whole process easier to manage, start to finish.</li>
+  </ul>
+  <p class="stack"><strong>Stack:</strong> Python, FastAPI, React and TypeScript, MCP, Anthropic API. About 17,000 lines.</p>
+</section>
+
+<section id="helpdesk">
+  <h2>A help desk agent that asks before it acts</h2>
+  <p class="sum">An interactive agent in Microsoft Teams that answers IT questions from the company knowledge base and past tickets, and opens a ticket only when the person says yes.</p>
+  <figure>
+    <div class="scroll" tabindex="0"><svg viewBox="0 0 760 262" role="img" aria-label="Help desk agent: answers from knowledge base and resolved tickets; opens a ticket only after the employee confirms"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahp"/></marker></defs><g class="n ext"><rect x="0" y="70" width="120" height="60" rx="6"/><text x="60.0" y="96.5">Employee in</text><text x="60.0" y="111.5">Teams chat</text></g><g class="n model"><rect x="190" y="70" width="150" height="60" rx="6"/><text x="265.0" y="96.5">Help desk agent</text><text x="265.0" y="111.5">(Bedrock AgentCore)</text></g><g class="n store"><path d="M420,8 a75.0,8 0 0,0 150,0 v38 a75.0,8 0 0,1 -150,0 z"/><ellipse cx="495.0" cy="8" rx="75.0" ry="8"/><text x="495.0" y="27.5">Knowledge</text><text x="495.0" y="42.5">base</text></g><g class="n store"><path d="M420,154 a75.0,8 0 0,0 150,0 v38 a75.0,8 0 0,1 -150,0 z"/><ellipse cx="495.0" cy="154" rx="75.0" ry="8"/><text x="495.0" y="173.5">Resolved</text><text x="495.0" y="188.5">tickets index</text></g><g class="n human"><rect x="620" y="70" width="140" height="60" rx="14"/><text x="690.0" y="96.5">Employee confirms</text><text x="690.0" y="111.5">the ticket</text></g><g class="n"><rect x="620" y="196" width="140" height="54" rx="6"/><text x="690.0" y="219.5">Service desk</text><text x="690.0" y="234.5">ticket created</text></g><path class="e" d="M120,92 L188,92" marker-end="url(#ah)"/><text class="el" x="154" y="84">question</text><path class="e" d="M190,112 L122,112" marker-end="url(#ah)"/><text class="el" x="156" y="128">answer</text><path class="e" d="M340,86 C380,86 380,27 418,27" marker-end="url(#ah)"/><path class="e" d="M340,114 C380,114 380,173 418,173" marker-end="url(#ah)"/><text class="el" x="372" y="52">retrieve</text><path class="e dash" d="M340,100 L618,100" marker-end="url(#ah)"/><text class="el" x="480" y="94">proposes a ticket</text><path class="e" d="M690,130 L690,194" marker-end="url(#ah)"/><text class="el" x="700" y="166" style="text-anchor:start">only if yes</text></svg></div>
+    <figcaption>Answers come from retrieval over real documentation and resolved tickets. Taking an action, opening a service-desk ticket, always waits for the employee's confirmation.</figcaption>
+  </figure>
+  <h3>The problem</h3>
+  <p>A small IT team spent a lot of time on questions that had already been answered, in the knowledge base or in old tickets.</p>
+  <h3>What I did</h3>
+  <p>I built a retrieval agent on AWS Bedrock AgentCore over the structured knowledge base and an index of 2,454 resolved tickets. When it can't solve something, it drafts a ticket and asks the employee to confirm before creating it. All of the infrastructure is code.</p>
+  <h3>Results</h3>
+  <ul class="results">
+    <li>Working prototype in 10 days, then approved as a formal project.</li>
+    <li>Redesigned the ticket sync so each run makes about 20 API calls instead of about 2,450.</li>
+  </ul>
+  <p class="stack"><strong>Stack:</strong> AWS Bedrock AgentCore and Knowledge Bases, OpenSearch Serverless, Lambda, EventBridge, Terraform (about 3,800 lines across 6 stacks), Microsoft Teams.</p>
+</section>
+
+<section id="gateway">
+  <h2>Safe AI access for a whole company</h2>
+  <p class="sum">One governed path from every AI tool to the models, so a finance company could adopt AI without sending data where it shouldn't go.</p>
+  <figure>
+    <div class="scroll" tabindex="0"><svg viewBox="0 0 760 260" role="img" aria-label="Company AI access: all tools route through a governed gateway to models in a private cloud account"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahp"/></marker></defs><g class="n ext"><rect x="0" y="10" width="150" height="52" rx="6"/><text x="75.0" y="32.5">Desktop and</text><text x="75.0" y="47.5">coding assistants</text></g><g class="n ext"><rect x="0" y="84" width="150" height="52" rx="6"/><text x="75.0" y="106.5">Internal apps</text><text x="75.0" y="121.5">and agents</text></g><g class="n ext"><rect x="0" y="158" width="150" height="52" rx="6"/><text x="75.0" y="180.5">Automation</text><text x="75.0" y="195.5">scripts</text></g><g class="n human"><rect x="260" y="60" width="190" height="100" rx="14"/><text x="355.0" y="99.0">LLM gateway</text><text x="355.0" y="114.0">keys, budgets, logging,</text><text x="355.0" y="129.0">approved models only</text></g><g class="n model"><rect x="560" y="60" width="200" height="100" rx="6"/><text x="660.0" y="106.5">Models in the company&#x27;s</text><text x="660.0" y="121.5">private cloud account</text></g><path class="e" d="M150,36 C205,36 205,110 258,110" marker-end="url(#ah)"/><path class="e" d="M150,110 C205,110 205,110 258,110" marker-end="url(#ah)"/><path class="e" d="M150,184 C205,184 205,110 258,110" marker-end="url(#ah)"/><path class="e" d="M450,110 L558,110" marker-end="url(#ah)"/><g class="n"><rect x="260" y="196" width="190" height="52" rx="6"/><text x="355.0" y="218.5">Approved MCP</text><text x="355.0" y="233.5">server catalogue</text></g><path class="e dash" d="M355,196 L355,163" marker-end="url(#ah)"/><text class="el" x="366" y="184" style="text-anchor:start">vetted tools</text></svg></div>
+    <figcaption>Every request goes through one gateway that holds the keys, enforces budgets, logs usage and only allows approved models running in the company's own cloud account.</figcaption>
+  </figure>
+  <h3>What I did</h3>
+  <p>I led the company's rollout of Claude. I routed model traffic through an internal LiteLLM gateway to AWS Bedrock, solved running the desktop and coding assistants on virtual desktops, and packaged an installer for managed laptops. I also keep the catalogue of MCP servers people are approved to use.</p>
+  <p class="stack"><strong>Stack:</strong> LiteLLM, AWS Bedrock, Claude, MCP, Cloudflare Zero Trust, Intune.</p>
+</section>
+
+<section id="publishing">
+  <h2>When the right answer isn't AI</h2>
+  <p class="sum">A web app that replaced a Word document for the company's standard due-diligence questionnaire, with versioned publishing and a tamper-evident audit trail.</p>
+  <figure>
+    <div class="scroll" tabindex="0"><svg viewBox="0 0 760 210" role="img" aria-label="Questionnaire site: drafts are published as versions, every change is written to a hash-chained audit log"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahp"/></marker></defs><g class="n ext"><rect x="0" y="30" width="140" height="60" rx="6"/><text x="70.0" y="56.5">Admin edits</text><text x="70.0" y="71.5">a draft</text></g><g class="n human"><rect x="200" y="30" width="150" height="60" rx="14"/><text x="275.0" y="56.5">Publish as a</text><text x="275.0" y="71.5">new version</text></g><g class="n"><rect x="410" y="30" width="150" height="60" rx="6"/><text x="485.0" y="56.5">Published</text><text x="485.0" y="71.5">version</text></g><g class="n ext"><rect x="620" y="30" width="140" height="60" rx="6"/><text x="690.0" y="56.5">Client downloads</text><text x="690.0" y="71.5">PDF or Word</text></g><path class="e" d="M140,60 L198,60" marker-end="url(#ah)"/><path class="e" d="M350,60 L408,60" marker-end="url(#ah)"/><path class="e" d="M560,60 L618,60" marker-end="url(#ah)"/><g class="n store"><path d="M200,148 a75.0,8 0 0,0 150,0 v44 a75.0,8 0 0,1 -150,0 z"/><ellipse cx="275.0" cy="148" rx="75.0" ry="8"/><text x="275.0" y="170.5">Append-only</text><text x="275.0" y="185.5">audit log</text></g><g class="n store"><path d="M410,148 a75.0,8 0 0,0 150,0 v44 a75.0,8 0 0,1 -150,0 z"/><ellipse cx="485.0" cy="148" rx="75.0" ry="8"/><text x="485.0" y="170.5">Version history</text><text x="485.0" y="185.5">with rollback</text></g><path class="e dash" d="M275,90 L275,138" marker-end="url(#ah)"/><path class="e dash" d="M485,90 L485,138" marker-end="url(#ah)"/><text class="el" x="285" y="120" style="text-anchor:start">every change recorded</text><text class="cap" x="30" y="166">each entry is hash-chained</text><text class="cap" x="30" y="182">to the one before it</text></svg></div>
+    <figcaption>Admins edit drafts in the browser and publish them as versions. Every change goes into an append-only log where each entry is hash-chained to the last, so the history can't be quietly rewritten.</figcaption>
+  </figure>
+  <h3>The problem</h3>
+  <p>The company's standard answers to client due-diligence questions lived in a Word file. Keeping it current, knowing which version a client had received, and proving who changed what were all manual.</p>
+  <h3>What I did</h3>
+  <p>I built a web app where admins edit the questionnaire in the browser, move it from draft to published, and roll back to any earlier version. Clients download the latest version as a generated PDF or Word file. This problem needed reliable software and an audit trail, not a model, so it has none.</p>
+</section>
+
+<section id="how">
+  <h2>How I work</h2>
+  <p class="sum">Claude Code is my main development tool. In 2026 I used it on about 70 projects, from full-stack internal apps to cloud migrations. I treat its output the way I'd treat a sharp new teammate's.</p>
+  <ul class="habits">
+    <li><strong>Nothing ships unreviewed.</strong> AI-written changes go through the same gates as mine: infrastructure plans, dry runs and code review. Dry runs once caught two fleet-wide failures before release, one that would have stopped a management agent on every server and one that would have reset certificates on 40 hosts at once.</li>
+    <li><strong>Fix the data first.</strong> A well-organized source beats a clever prompt.</li>
+    <li><strong>Use AI where it earns its place.</strong> Plenty of problems need a script, an automation rule or a scheduled job, and I build those too.</li>
+    <li><strong>Put the guardrail in the system.</strong> Confirmation steps, read-only roles and redaction hold up better than instructions in a prompt.</li>
+  </ul>
+</section>
+
+<section id="background">
+  <h2>Background</h2>
+  <p>Senior Infrastructure Engineer at a fintech SaaS company since 2022: primary on-call for a hybrid AWS and on-prem estate, a core engineer on moving out of two colocation datacenters, and owner of hardened server images, patch automation and organization-wide backups. Before that, Linux and datacenter roles at Facebook, IBM Watson Health and UNC Chapel Hill. BS in Computer Science, MS in Information Technology Management.</p>
+  <p style="margin-top:1rem">The source code for these projects belongs to my employer, so it isn't public. I'm glad to walk through the design and the trade-offs in detail.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>Dustin Jones, Shelby, North Carolina. <a href="mailto:jonesy6@gmail.com">jonesy6@gmail.com</a></p>
+  <p>The content on this site is my own and does not represent Alpha Theory's positions, strategies or opinions.</p>
+</footer>
+
+</div>
+</body>
+</html>
